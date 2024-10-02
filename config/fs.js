@@ -1,5 +1,5 @@
 const _LOCAL_FILES = {
-  "id_rsa": "Nice try!",
+  "time_machine": "boom! you’ve finally hacked the site!",
 };
 
 const _FILES = {
@@ -7,9 +7,9 @@ const _FILES = {
 }
 
 const _DIRS = {
-  "~": ["id_rsa"],
+  "~": ["time_machine"],
   "bin": ["zsh"],
-  "home": Object.keys(team).concat("guest", "conviction").sort(),
+  // "home": Object.keys(team).concat("guest", "conviction").sort(),
   "/": ["bin", "home"],
 };
 

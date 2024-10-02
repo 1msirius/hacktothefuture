@@ -1,11 +1,6 @@
-const whoisConviction1 =
-  "Conviction is a new venture capital firm, founded on the idea that artificial intelligence and machine learning will be transformative technologies for the next generation of companies and builders. We believe these technologies will have broad, cross-industry impact, and we are excited to work with founders at every layer of the stack, from chips and research labs to AI-native applications.";
-const whoisConviction2 =
-  "We want to build a firm that is hands-on, deep in our domain, long-term in our orientation, and committed to community. To that end, we're lucky to count the founders, CEOs, or COOs of Amplitude, Anchorage, Benchling, Coda, Coinbase, Deepmind, Dropbox, Duo, Hubspot, Figma, Front, Gusto, Instacart, Mongo, Notion, Okta, Rippling, Rubrik, Shopify, Stripe, Workday, Zillow, Zoom and other pioneering tech companies as LPs. We're excited to work with the next founders who will build companies to join their ranks.";
-const whoisCommit1 =
-  "Commit is a community program for young builders who want to work on new things in AI. Openminded, force-of-nature young people are some of the most powerful forces in the world. We want to enable them with a just-as-powerful network.";
-const whoisCommit2 =
-  "Though cohorts are onboarded annually, we are building a lifelong network of AI innovators, with mentorship from the Conviction team, the Conviction family of companies and Conviction alums. Use %apply% to join us!";
+const about =
+  "togeting we'll make some cool things!";
+
 const timeUnit = 10; // useful for development, set to 10 to run faster, set to 1000 for production
 let killed = false;
 
@@ -18,7 +13,7 @@ const commands = {
       const cmd = kv[0];
       const desc = kv[1];
       if (term.cols >= 80) {
-        const rightPad = maxCmdLength - cmd.length + 2;
+        const rightPad = maxCmdLength - cmd.length + 7;
         const sep = " ".repeat(rightPad);
         term.stylePrint(`${cmd}${sep}${desc}`);
       } else {
@@ -32,75 +27,18 @@ const commands = {
     });
   },
 
-  whois: function (args) {
-    const name = args[0];
-    const people = Object.keys(team);
+  social: function () {
+    term.stylePrint("Connect with us online!\r\n");
 
-    if (!name) {
-      term.stylePrint(
-        "%whois%: Learn about the firm, or a partner - usage:\r\n"
-      );
-      term.stylePrint("%whois% conviction");
-      for (p of people) {
-        term.stylePrint(`%whois% ${p}`);
-      }
-    } else if (name == "conviction") {
-      term.stylePrint(whoisConviction1);
-      term.stylePrint("\r\n");
-      term.stylePrint(whoisConviction2);
-    } else if (Object.keys(team).includes(name)) {
-      const person = team[name];
-      term.stylePrint(
-        `\r\n${person["name"]}, ${person["title"]} - ${name}@conviction.com`
-      );
-      term.stylePrint(`${person["twitter"]}\r\n`);
-      term.stylePrint(person["description"]);
-    } else {
-      term.stylePrint(`User ${name || ""} not found. Try:\r\n`);
-      term.stylePrint("%whois% conviction");
-      for (p of people) {
-        term.stylePrint(`%whois% ${p}`);
-      }
-    }
-  },
-
-  sponsors: function () {
-    term.stylePrint("Huge thank you to our sponsors!\r\n");
-
-    for (s of Object.values(sponsors)) {
+    for (s of Object.values(social)) {
       term.stylePrint(`${s["name"]} - ${s["link"]}`);
     }
   },
 
-  hackathon: function (args) {
-    const name = args[0];
-    const teams = Object.keys(hackathon);
-
-    if (!name) {
-      term.stylePrint("%hackathon%: Learn about a hackathon project:\r\n");
-      for (p of teams) {
-        term.stylePrint(`%hackathon% ${p}`);
-      }
-    } else if (Object.keys(hackathon).includes(name)) {
-      const team = hackathon[name];
-      term.stylePrint(`\r\n${team["description"]}`);
-      term.stylePrint(`\r\nTeam members:`);
-      for (member of team["team"]) {
-        term.stylePrint(`   ${member["name"]}, ${member["link"]}`);
-      }
-      term.stylePrint(`${team["link"]}`);
-    } else {
-      term.stylePrint(`User ${name || ""} not found. Try:\r\n`);
-      for (p of teams) {
-        term.stylePrint(`%hackathon% ${p}`);
-      }
-    }
-  },
-
-  commit: function () {
-    term.stylePrint(whoisCommit1);
+  whois: function () {
+    term.stylePrint("A place where teens built cool shit!");
     term.stylePrint("\r\n");
-    term.stylePrint(whoisCommit2);
+    term.stylePrint(about);
   },
 
   email: function () {
@@ -139,8 +77,25 @@ const commands = {
     term.openURL(club);
   },
 
+  hackathon: function () {
+    term.stylePrint("hackathons comming soon!");
+  },
+
+  locate: function () {
+    term.stylePrint("Earth Dimension C-137");
+    term.stylePrint("just kidding, we're on the internet, lol!");
+  },
+
+  secret: function () {
+    term.openURL("https://youtu.be/JC82Il2cjqA?si=XsGuLRU2i1dEdNcM");
+  },
+
   join: function () {
     term.openURL(club);
+  },
+
+  hack: function() {
+    term.stylePrint("Yeah, I didn't literally mean %hack%. I meant to encourage you to try out some Linux commands, as this site operates like a real terminal!");
   },
 
   // terminal commands (don't touch them!)
@@ -232,8 +187,8 @@ const commands = {
     } else {
       term.stylePrint(`No such file: ${filename}`);
     }
-    if (filename == "id_rsa") {
-      term.openURL(club);
+    if (filename == "time_machine") {
+      term.openURL("https://www.youtube.com/watch?v=KEdS_tzGstI");
     }
   },
 
@@ -241,8 +196,8 @@ const commands = {
     const q = args[0];
     const filename = args[1];
 
-    if (filename == "id_rsa") {
-      term.openURL(club);
+    if (filename == "time_machine") {
+      term.openURL("https://youtu.be/KEdS_tzGstI?si=A64Nfhycp_46_ITN");
     }
 
     if (!q || !filename) {
@@ -374,12 +329,6 @@ const commands = {
     term.command(`kill ${args.join(" ")}`);
   },
 
-  locate: function () {
-    term.stylePrint("Conviction Partners");
-    term.stylePrint("660 York St");
-    term.stylePrint("San Francisco, CA 94110");
-  },
-
   history: function () {
     term.history.forEach((element, index) => {
       term.stylePrint(`${1000 + index}  ${element}`);
@@ -445,9 +394,9 @@ const commands = {
   },
 
   su: function (args) {
-    user = args[0] || "hackerspace";
+    user = args[0] || "hacker";
 
-    if (user == "hackerspace" || user == "hacker") {
+    if (user == "hacker" || user == "rick") {
       term.user = user;
       term.command("cd ~");
     } else {
@@ -473,10 +422,6 @@ const commands = {
     );
   },
 
-  ping: function () {
-    term.stylePrint("pong");
-  },
-
   ps: function () {
     term.stylePrint("PID TTY       TIME CMD");
     term.stylePrint("424 ttys00 0:00.33 %-zsh%");
@@ -491,14 +436,14 @@ const commands = {
     switch (args[0]) {
       case "-a":
         term.stylePrint(
-          "CnvctnVC cnvctn 0.0.1 CnvctnVC Kernel Version 0.0.1 root:xnu-31415.926.5~3/RELEASE_X86_64 x86_64"
+          "HackToTheFuture cnvctn 0.0.1 HackToTheFuture Kernel Version 0.0.1 root:xnu-31415.926.5~3/RELEASE_X86_64 x86_64"
         );
         break;
       case "-mrs":
-        term.stylePrint("CnvctnVC 0.0.1 x86_64");
+        term.stylePrint("Hack To The Future 0.0.1 x86_64");
         break;
       default:
-        term.stylePrint("CnvctnVC");
+        term.stylePrint("HackToTheFuture");
     }
   },
 
@@ -514,22 +459,6 @@ const commands = {
     term.init();
   },
 
-  zed: function () {
-    term.stylePrint("Coming soon! ;)");
-  },
-
-  ge: function () {
-    term.command("great_expectations");
-  },
-
-  great_expectations: function () {
-    term.command("superconductive");
-  },
-
-  privacy: function () {
-    term.command("privacy_dynamics");
-  },
-
   ln: function () {
     term.command("alan");
   },
@@ -539,23 +468,6 @@ const commands = {
       "please instead build a webstore with macros. in the meantime, the result is: " +
         eval(args.join(" "))
     );
-  },
-
-  bg: function (args) {
-    term.stylePrint(
-      `Sorry. If you want to background one of these jobs, you'll need to help us fill it. Try %fg% ${args} instead.`
-    );
-  },
-
-  fg: function (args) {
-    const job = jobs[args];
-
-    if (job) {
-      job.map((line) => term.stylePrint(line));
-      term.stylePrint(`\r\n%apply% ${args} to apply!`);
-    } else {
-      term.stylePrint(`job id ${args} not found.`);
-    }
   },
 };
 
