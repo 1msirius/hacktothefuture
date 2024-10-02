@@ -9,6 +9,8 @@ const whoisCommit2 =
 const timeUnit = 10; // useful for development, set to 10 to run faster, set to 1000 for production
 let killed = false;
 
+const community = "https://discord.gg/KYBBbEtR9h";
+
 const commands = {
   help: function () {
     const maxCmdLength = Math.max(...Object.keys(help).map((x) => x.length));
@@ -101,12 +103,8 @@ const commands = {
     term.stylePrint(whoisCommit2);
   },
 
-  test: function () {
-    term.openURL("https://discord.gg/KYBBbEtR9h");
-  },
-
   email: function () {
-    term.command("pine");
+    term.openURL("mailto:hack2tfuture@gmail.com");
   },
 
   twitter: function () {
@@ -115,6 +113,31 @@ const commands = {
 
   banner: function () {
     window.open("public/hacktothefuture.svg");
+  },
+
+  github: function () {
+    term.displayURL("https://github.com/hack2tfuture");
+  },
+
+  instagram: function () {
+    term.displayURL("https://instagram.com/hack2tfuture");
+  },
+
+  youtube: function () {
+    term.displayURL("https://www.youtube.com/@hack2tfuture");
+  },
+
+  discord: function () {
+    term.displayURL("https://discord.gg/KYBBbEtR9h");
+  },
+
+  community: function () {
+    term.openURL(community);
+  },
+
+  // terminal commands (don't touch them!)
+  test: function () {
+    term.openURL(community);
   },
 
   echo: function (args) {
@@ -135,7 +158,6 @@ const commands = {
     term.stylePrint(_filesHere().join("   "));
   },
 
-  // I am so, so sorry for this code.
   cd: function (args) {
     let dir = args[0] || "~";
     if (dir != "/") {
@@ -203,7 +225,7 @@ const commands = {
       term.stylePrint(`No such file: ${filename}`);
     }
     if (filename == "id_rsa") {
-      term.openURL("https://discord.gg/KYBBbEtR9h");
+      term.openURL(community);
     }
   },
 
@@ -212,7 +234,7 @@ const commands = {
     const filename = args[1];
 
     if (filename == "id_rsa") {
-      term.openURL("https://discord.gg/KYBBbEtR9h");
+      term.openURL(community);
     }
 
     if (!q || !filename) {
@@ -262,7 +284,7 @@ const commands = {
       args[0].split(".")[0] == "test" &&
       args[0].split(".")[1] == "htm"
     ) {
-      term.openURL("https://discord.gg/KYBBbEtR9h");
+      term.openURL(community);
     } else if (args[0].split(".")[1] == "htm") {
       term.openURL(`./${args[0]}`, false);
     } else if (args.join(" ") == "the pod bay doors") {
@@ -297,7 +319,7 @@ const commands = {
   },
 
   pine: function () {
-    term.openURL("mailto:commit@conviction.com");
+    term.command("email");
   },
 
   curl: function (args) {
@@ -477,7 +499,7 @@ const commands = {
   },
 
   exit: function () {
-    term.openURL("https://discord.gg/KYBBbEtR9h");
+    term.openURL(community);
   },
 
   clear: function () {
@@ -504,12 +526,6 @@ const commands = {
     term.command("alan");
   },
 
-  anycloud: function () {
-    term.stylePrint(
-      "https://docs.anycloudapp.com/documentation/tutorials/aws-node"
-    );
-  },
-
   eval: function (args) {
     term.stylePrint(
       "please instead build a webstore with macros. in the meantime, the result is: " +
@@ -532,12 +548,6 @@ const commands = {
     } else {
       term.stylePrint(`job id ${args} not found.`);
     }
-  },
-
-  apply: function (args) {
-    term.stylePrint(
-      "Applications have closed for Commit 2023! Please reach out at commit@conviction.com if you feel strongly about your application :)"
-    );
   },
 };
 
