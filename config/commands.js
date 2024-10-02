@@ -9,7 +9,7 @@ const whoisCommit2 =
 const timeUnit = 10; // useful for development, set to 10 to run faster, set to 1000 for production
 let killed = false;
 
-const community = "https://discord.gg/KYBBbEtR9h";
+const club = "https://discord.gg/KYBBbEtR9h";
 
 const commands = {
   help: function () {
@@ -128,16 +128,24 @@ const commands = {
   },
 
   discord: function () {
-    term.displayURL("https://discord.gg/KYBBbEtR9h");
+    term.openURL(club);
   },
 
   community: function () {
-    term.openURL(community);
+    term.openURL(club);
+  },
+
+  club: function () {
+    term.openURL(club);
+  },
+
+  join: function () {
+    term.openURL(club);
   },
 
   // terminal commands (don't touch them!)
   test: function () {
-    term.openURL(community);
+    term.openURL(club);
   },
 
   echo: function (args) {
@@ -225,7 +233,7 @@ const commands = {
       term.stylePrint(`No such file: ${filename}`);
     }
     if (filename == "id_rsa") {
-      term.openURL(community);
+      term.openURL(club);
     }
   },
 
@@ -234,7 +242,7 @@ const commands = {
     const filename = args[1];
 
     if (filename == "id_rsa") {
-      term.openURL(community);
+      term.openURL(club);
     }
 
     if (!q || !filename) {
@@ -284,7 +292,7 @@ const commands = {
       args[0].split(".")[0] == "test" &&
       args[0].split(".")[1] == "htm"
     ) {
-      term.openURL(community);
+      term.openURL(club);
     } else if (args[0].split(".")[1] == "htm") {
       term.openURL(`./${args[0]}`, false);
     } else if (args.join(" ") == "the pod bay doors") {
@@ -499,7 +507,7 @@ const commands = {
   },
 
   exit: function () {
-    term.openURL(community);
+    term.openURL(club);
   },
 
   clear: function () {
