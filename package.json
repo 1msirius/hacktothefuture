@@ -1,7 +1,7 @@
 {
-  "name": "conviction-commit-website",
+  "name": "hack-to-the-future",
   "version": "0.1.0",
-  "description": "Conviction Commit Website",
+  "description": "A place where teens built cool shit!",
   "dependencies": {
     "aalib.js": "^2.0.0",
     "netlify-cli": "^6.14.7",
@@ -12,7 +12,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:ConvictionVC/cli-website.git"
+    "url": "git@github.com:hack2tfuture/hack2tfuture.github.io.git"
   },
   "scripts": {
     "start": "netlify dev",
