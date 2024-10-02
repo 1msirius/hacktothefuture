@@ -87,7 +87,8 @@ const commands = {
   },
 
   secret: function () {
-    term.openURL("https://youtu.be/JC82Il2cjqA?si=XsGuLRU2i1dEdNcM");
+    term.stylePrint("you can learn anything!");
+    term.openURL("https://youtu.be/JC82Il2cjqA");
   },
 
   join: function () {
@@ -188,7 +189,7 @@ const commands = {
       term.stylePrint(`No such file: ${filename}`);
     }
     if (filename == "time_machine") {
-      term.openURL("https://www.youtube.com/watch?v=KEdS_tzGstI");
+      term.openURL("https://youtu.be/KEdS_tzGstI");
     }
   },
 
@@ -197,7 +198,7 @@ const commands = {
     const filename = args[1];
 
     if (filename == "time_machine") {
-      term.openURL("https://youtu.be/KEdS_tzGstI?si=A64Nfhycp_46_ITN");
+      term.openURL("https://youtu.be/27Rn_Mqpxd8");
     }
 
     if (!q || !filename) {
