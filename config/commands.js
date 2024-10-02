@@ -113,6 +113,10 @@ const commands = {
     term.displayURL("https://twitter.com/_hackspace");
   },
 
+  banner: function () {
+    window.open("public/hacktothefuture.svg");
+  },
+
   echo: function (args) {
     const message = args.join(" ");
     term.stylePrint(message);
