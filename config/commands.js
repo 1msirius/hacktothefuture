@@ -1,7 +1,11 @@
 const about =
-  "togeting we'll make some cool things!";
+  "Hack to the Future is a community of teen innovators working on exciting projects. We collaborate to code, build, and create cool hardware and software. With a strong focus on open-source projects, we invite everyone to dive in, contribute, and learn together.";
+  const about2 =
+  "We also support your cool projects through microgrants, type %hackfund% for more details.";
+  const about3 =
+  "Type %join% to become a member of our community and connect with fellow innovators!";
 
-const timeUnit = 10; // useful for development, set to 10 to run faster, set to 1000 for production
+  const timeUnit = 10; // useful for development, set to 10 to run faster, set to 1000 for production
 let killed = false;
 
 const club = "https://discord.gg/KYBBbEtR9h";
@@ -36,13 +40,17 @@ const commands = {
   },
 
   whois: function () {
-    term.stylePrint("A place where teens built cool shit!");
-    term.stylePrint("\r\n");
     term.stylePrint(about);
+    term.stylePrint("\r\n");
+    term.stylePrint(about2);
+    term.stylePrint("\r\n");
+    term.stylePrint(about3);
   },
 
   hackfund: function () {
-    term.stylePrint("Hack Fund supports young innovators with microgrants of $100 to $1000 as non-dilutive capital to fuel your exciting projects.");
+    term.stylePrint(
+      "Hack Fund supports young innovators with microgrants of $100 to $1000 as non-dilutive capital to fuel your exciting projects."
+    );
     term.stylePrint("\r\n");
     term.displayURL("https://hackersfund.netlify.app/");
   },
@@ -101,8 +109,10 @@ const commands = {
     term.openURL(club);
   },
 
-  hack: function() {
-    term.stylePrint("Yeah, I didn't literally mean %hack%. I meant to encourage you to try out some Linux commands, as this site operates like a real terminal!");
+  hack: function () {
+    term.stylePrint(
+      "Yeah, I didn't literally mean %hack%. I meant to encourage you to try out some Linux commands, as this site operates like a real terminal!"
+    );
   },
 
   // terminal commands (don't touch them!)

@@ -9,7 +9,7 @@ const _FILES = {
 const _DIRS = {
   "~": ["time_machine"],
   "bin": ["zsh"],
-  // "home": Object.keys(team).concat("guest", "conviction").sort(),
+  "home": ["hack_future"],
   "/": ["bin", "home"],
 };
 
