@@ -56,7 +56,7 @@ const commands = {
   },
 
   banner: function () {
-    window.open("public/hacktothefuture.svg");
+    window.open("public/hacktothefuture.png");
   },
 
   github: function () {
