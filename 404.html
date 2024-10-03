@@ -13,23 +13,40 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        min-height: 100vh; 
+        min-height: 100vh;
         margin: 0;
         text-align: center;
       }
       .ascii-container {
         display: flex;
-        justify-content: center; 
+        justify-content: center;
       }
       .ascii-art {
-        font-family: monospace; 
-        white-space: pre; 
-        margin: 0; 
-        font-size: 16px;
+        font-family: monospace;
+        white-space: pre;
+        margin: 0;
+        font-size: 18px;
       }
       .description {
         font-family: "JetBrains Mono", monospace;
-        color: #87FF5F;
+        color: #87ff5f;
+        padding-bottom: 30px;
+      }
+      .button {
+        background-color: white;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 1em;
+        cursor: pointer;
+        margin-top: 50px;
+        text-decoration: none;
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 600;
+      }
+      .button:hover {
+        background-color: #f0f0f0;
       }
     </style>
   </head>
@@ -45,6 +62,7 @@
         </pre>
       </div>
       <p class="description">This page has been erased from existence!</p>
+      <a href="/" class="button">Earth</a>
     </div>
   </body>
 </html>
