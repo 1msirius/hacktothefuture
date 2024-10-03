@@ -41,6 +41,12 @@ const commands = {
     term.stylePrint(about);
   },
 
+  hackfund: function () {
+    term.stylePrint("Hack Fund supports young innovators with microgrants of $100 to $1000 as non-dilutive capital to fuel your exciting projects.");
+    term.stylePrint("\r\n");
+    term.displayURL("https://hackersfund.netlify.app/");
+  },
+
   email: function () {
     term.openURL("mailto:hack2tfuture@gmail.com");
   },

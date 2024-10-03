@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Abel|Source+Code+Pro&display=swap);
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 
 body, html {
   height: 100%;
@@ -7,7 +7,7 @@ body, html {
 
 body {
   background-color: #2c2c2c;
-  font-family: "Abel";
+  font-family: "JetBrains Mono", monospace;
   margin: 0;
 }
 
@@ -18,10 +18,4 @@ body {
 
 #terminal {
   height: 100%;
-}
-
-:conviction {
-  --brand-bg-color: #2c2c2c;
-  --brand-txt-color: #fff;
-  --brand-link-color: #fff;
 }
