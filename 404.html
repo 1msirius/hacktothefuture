@@ -1,13 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Page</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Hack To The Future</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+      body {
+        background-color: black;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; 
+        margin: 0;
+        text-align: center;
+      }
+      .ascii-container {
+        display: flex;
+        justify-content: center; 
+      }
+      .ascii-art {
+        font-family: monospace; 
+        white-space: pre; 
+        margin: 0; 
+        font-size: 16px;
+      }
+      .description {
+        font-family: "JetBrains Mono", monospace;
+        color: #87FF5F;
+      }
+    </style>
+  </head>
+  <body>
     <div class="container">
-        <h1>Page not found</h1>
+      <div class="ascii-container">
+        <pre class="ascii-art">
+   __ __  ____  __ __
+  / // / / __ \/ // /
+ / // /_/ / / / // /_
+/__  __/ /_/ /__  __/
+  /_/  \____/  /_/   
+        </pre>
+      </div>
+      <p class="description">This page has been erased from existence!</p>
     </div>
-</body>
+  </body>
 </html>
